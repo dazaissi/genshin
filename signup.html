@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Elemen audio -->
+    <audio id="audio" autoplay loop>
+        <source src="genshin-bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Kontrol audio di pojok kanan bawah -->
+    <div class="audio-controls">
+        <i id="audio-icon" class="bx bx-play" onclick="toggleAudio()"></i> <!-- Ikon play sebagai default -->
+    </div>
+
+    <!-- Form Login -->
+    <div class="wrapper">
+        <form onsubmit="event.preventDefault(); login();">
+            <h1>SIGN UP</h1>
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
+        </div>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class="bx bxs-user-circle"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            <div class="remember-forgot">
+                <label><input type="checkbox">I have read and understood the terms and conditions before registering.</label>
+            </div>
+            <button type="submit" class="btn">SIGN UP</button>
+        </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Fungsi login
+        function login() {
+            // If successed, go to homepage
+            window.location.href = "homepage.html";
+        }
+
+        // Fungsi untuk mengontrol audio dan mengganti ikon
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            const audioIcon = document.getElementById('audio-icon');
+
+            if (audio.paused) {
+                audio.play();
+                audioIcon.classList.replace('bx-play', 'bx-pause');  // Ganti ikon play menjadi pause
+                console.log('Audio is playing');  // Cek di console
+            } else {
+                audio.pause();
+                audioIcon.classList.replace('bx-pause', 'bx-play');  // Ganti ikon pause menjadi play
+                console.log('Audio is paused');  // Cek di console
+            }
+        }
+    </script>
+</body>
+</html>
