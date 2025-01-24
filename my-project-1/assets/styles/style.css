@@ -12,7 +12,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: url('https://github.com/dazaissi/genshin/blob/e5f5d0c4b50c45e17401fbc9640c9a118c2e777e/my-project-1/assets/videos/liyue-genshin-impact.gif') no-repeat center center fixed;
+    background: url('my-project-1/assets/videos/liyue-genshin-impact.gif') no-repeat center center fixed;
     background-size: cover;
     background-position: center;
 }
