@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN IN</title>
+    <link rel="icon" href="my-project-1/assets/images/mas2.webp" type="image/x-icon">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden; /* Prevent scrollbars */
+            background: #000; /* Fallback color if video doesn't load */
+            position: relative;
+        }
+
+        /* Video Background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure video covers the entire screen */
+            z-index: -1; /* Keep the video behind the content */
+        }
+
+        /* Form Wrapper */
+        .wrapper {
+           width: 420px;
+        background: transparent;
+        border: 2px solid rgba(225, 255, 255, .2);
+        backdrop-filter: blur(6px);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        border-radius: 10px;
+        padding: 30px 40px;
+        }
+
+        .wrapper h1 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        .input-box {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin: 30px 0 20px;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(225, 255, 255, .2);
+            border-radius: 48px;
+            font-size: 16px;
+            color: #fff;
+            padding: 10px 40px 10px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: #ddd;
+        }
+
+        .input-box input:focus {
+        border-color: #fff;
+        outline: none;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .wrapper .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14.5px;
+            margin: -15px 0 15px;
+        }
+
+        .remember-forgot label input {
+            accent-color: #fff;
+            margin-right: 3px;
+        }
+
+        .remember-forgot a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .remember-forgot a:hover {
+            text-decoration: underline;
+        }
+
+        .wrapper .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .wrapper .register-link {
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+        }
+
+        .register-link p a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .register-link p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Audio Control */
+        .audio-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+
+        .audio-controls i {
+            font-size: 40px;
+            cursor: pointer;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .audio-controls i:hover {
+            color: #f39c12;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay loop muted class="video-background">
+        <source src="my-project-1/assets/video/rumah.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Audio Player -->
+    <audio id="audio" autoplay loop>
+        <source src="my-project-1/assets/audio/genshin-bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Audio Control Icon -->
+    <div class="audio-controls">
+        <i id="audio-icon" class="bx bx-play" onclick="toggleAudio()"></i>
+    </div>
+
+    <!-- Sign-In Form -->
+    <div class="wrapper">
+        <form onsubmit="event.preventDefault(); login();">
+            <h1>SIGN IN</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class="bx bxs-user-circle"></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox"> Remember Me</label>
+                <a href="#">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn">Sign in</button>
+            <div class="register-link">
+                <p>Don't have an account? <a href="signup.html">Sign Up!</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Function to handle login
+        function login() {
+            // Redirect to homepage upon successful login
+            window.location.href = "home.html";
+        }
+
+        // Toggle audio play/pause and change icon
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            const audioIcon = document.getElementById('audio-icon');
+
+            if (audio.paused) {
+                audio.play();
+                audioIcon.classList.replace('bx-play', 'bx-pause');
+                console.log('Audio is playing');
+            } else {
+                audio.pause();
+                audioIcon.classList.replace('bx-pause', 'bx-play');
+                console.log('Audio is paused');
+            }
+        }
+    </script>
+
+</body>
+</html>
