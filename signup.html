@@ -184,7 +184,7 @@
 
     <!-- Form -->
     <div class="wrapper">
-        <form onsubmit="event.preventDefault(); login(); method="POST" action="process_signup.php";>
+      <form method="POST" action="process_signup.php" onsubmit="return validateForm()">
             <h1>SIGN UP</h1>
 
             <div class="input-box">
