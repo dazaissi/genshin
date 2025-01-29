@@ -60,16 +60,36 @@ nav a.active {
     border-radius: 5px;
 }
 
+/* Tombol Sign in */
 .login {
     background: transparent;
-    border: 2px solid black;
+    border: 2px solid black; /* Tambahkan border hitam */
     color: black;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+/* Hover efek untuk Sign in */
+.login:hover {
+    background: black;
+    color: white;
+}
+
+/* Tombol Sign up */
 .signup {
     background: #6c78b3;
     color: white;
-    border: 2px solid #6c78b3;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 2px solid #6c78b3; /* Tambahkan border sesuai dengan warna background */
+    transition: all 0.3s ease;
+}
+
+/* Hover efek untuk Sign up */
+.signup:hover {
+    background: white;
+    color: #6c78b3;
 }
     .logo img {
         width: 120px;
@@ -306,7 +326,7 @@ nav a.active {
         </div>
     </section>
 
-</script>
+<script>
    document.addEventListener("DOMContentLoaded", function () {
     // Mengatur event listener untuk tombol close di recent search
     let closeButtons = document.querySelectorAll(".close-btn");
