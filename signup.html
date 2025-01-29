@@ -8,206 +8,217 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
-    <style>
-        @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+<style>
+    @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('my-project-1/assets/video/genshin.gif') no-repeat center center fixed;
-    background-size: cover;
-    background-position: center;
-}
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url('my-project-1/assets/video/genshin.gif') no-repeat center center fixed;
+        background-size: cover;
+        background-position: center;
+    }
 
-audio {
-    display: none;
-}
+    audio {
+        display: none;
+    }
 
-.wrapper {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(225, 255, 255, .2);
-   backdrop-filter: blur(20px);
-    color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    border-radius: 10px;
-    padding: 30px 40px;
-}
+    .wrapper {
+        width: 420px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid rgba(225, 255, 255, .2);
+        backdrop-filter: blur(20px);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        border-radius: 10px;
+        padding: 30px 40px;
+    }
 
-.wrapper h1 {
-    font-size: 35px;
-    text-align: center;
-}
+    .wrapper h1 {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-.input-box {
-    position: relative;  /* Mengatur posisi relatif agar ikon bisa di posisi absolut dalam box */
-    width: 100%;
-    height: 40px;
-    margin: 30px 0 20px;
-}
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: 45px;
+        margin: 15px 0;
+    }
 
-.input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(225, 255, 255, .2);
-    border-radius: 48px;
-    font-size: 16px;
-    color: #fff;
-    padding: 10px 40px 10px 20px;  /* Berikan padding untuk memberi ruang di kanan untuk ikon */
-}
+    .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 2px solid rgba(225, 255, 255, .2);
+        border-radius: 48px;
+        font-size: 16px;
+        color: #fff;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+    }
 
-.input-box input::placeholder {
-    color: #fff;
-}
+    .input-box input::placeholder {
+        color: #ddd;
+    }
 
-.input-box i {
-    position: absolute;
-    right: 15px;  /* Letakkan ikon di sebelah kanan */
-    top: 50%;
-    transform: translateY(-50%);  /* Vertikal align ikon ke tengah */
-    font-size: 20px;
-    color: #fff;  /* Warna ikon */
-}
+    .input-box input:focus {
+        border-color: #4CAF50;
+        outline: none;
+    }
 
-.wrapper .remember-forgot {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0 15px;
-}
+    .input-box i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #fff;
+    }
 
-.remember-forgot label input {
-    accent-color: #fff;
-    margin-right: 3px;
-}
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin-bottom: 15px;
+    }
 
-.remember-forgot a {
-    color: #fff;
-    text-decoration: none;
-}
+    .remember-forgot label input {
+        accent-color: #fff;
+        margin-right: 5px;
+    }
 
-.remember-forgot a:hover {
-    text-decoration: underline;
-}
+    .remember-forgot a {
+        color: #fff;
+        text-decoration: none;
+    }
 
-.wrapper .btn {
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-}
+    .remember-forgot a:hover {
+        text-decoration: underline;
+    }
 
-.wrapper .register-link {
-    font-size: 14.5px;
-    text-align: center;
-    margin: 20px 0 15px;
-}
+    .btn {
+        width: 100%;
+        height: 45px;
+        background: #4CAF50;
+        border: none;
+        border-radius: 40px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
 
-.register-link p a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-}
+    .btn:hover {
+        background: #45a049;
+    }
 
-.register-link p a:hover {
-    text-decoration: underline;
-}
+    .register-link {
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0;
+    }
 
-/* Styling untuk kontrol audio yang ada di pojok kanan bawah */
-.audio-controls {
-    position: fixed; /* Menempatkan elemen di posisi tetap */
-    bottom: 20px; /* 20px dari bawah */
-    right: 20px;  /* 20px dari kanan */
-    z-index: 100; /* Pastikan elemen berada di atas elemen lain */
-}
+    .register-link p a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
 
-.audio-controls i {
-    font-size: 40px;
-    cursor: pointer;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.5); /* Tambahkan latar belakang transparan */
-    border-radius: 50%; /* Membuat ikon menjadi bulat */
-    padding: 10px;
-}
+    .register-link p a:hover {
+        text-decoration: underline;
+    }
 
-.audio-controls i:hover {
-    color: #f39c12; /* Efek hover pada ikon */
-}
-    </style>
+    .audio-controls {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
+    .audio-controls i {
+        font-size: 40px;
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    .audio-controls i:hover {
+        color: #f39c12;
+    }
+</style>
+
 <body>
-    <!-- Elemen audio -->
+    <!-- Audio -->
     <audio id="audio" autoplay loop>
         <source src="my-project-1/assets/audio/genshin-bgm.mp3" type="audio/mp3">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Kontrol audio di pojok kanan bawah -->
+    <!-- Audio Control -->
     <div class="audio-controls">
-        <i id="audio-icon" class="bx bx-play" onclick="toggleAudio()"></i> <!-- Ikon play sebagai default -->
+        <i id="audio-icon" class="bx bx-play" onclick="toggleAudio()"></i>
     </div>
 
-    <!-- Form Login -->
+    <!-- Form -->
     <div class="wrapper">
         <form onsubmit="event.preventDefault(); login();">
             <h1>SIGN UP</h1>
+
             <div class="input-box">
                 <input type="email" placeholder="Email" required>
                 <i class='bx bxs-envelope'></i>
-        </div>
+            </div>
+
             <div class="input-box">
                 <input type="text" placeholder="Username" required>
                 <i class="bx bxs-user-circle"></i>
             </div>
+
             <div class="input-box">
                 <input type="password" placeholder="Password" required>
                 <i class="bx bxs-lock-alt"></i>
-            <div class="remember-forgot">
-                <label><input type="checkbox">I have read and understood the terms and conditions before registering.</label>
             </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox"> I have read and understood the terms and conditions.</label>
+            </div>
+
             <button type="submit" class="btn">SIGN UP</button>
         </form>
     </div>
 
-    <!-- JavaScript -->
     <script>
-        // Fungsi login
+        // Login function
         function login() {
-            // If successed, go to homepage
-            window.location.href = "homepage.html";
+            // If successful, go to homepage
+            window.location.href = "index.html";
         }
 
-        // Fungsi untuk mengontrol audio dan mengganti ikon
+        // Toggle audio and icon
         function toggleAudio() {
             const audio = document.getElementById('audio');
             const audioIcon = document.getElementById('audio-icon');
 
             if (audio.paused) {
                 audio.play();
-                audioIcon.classList.replace('bx-play', 'bx-pause');  // Ganti ikon play menjadi pause
-                console.log('Audio is playing');  // Cek di console
+                audioIcon.classList.replace('bx-play', 'bx-pause');
             } else {
                 audio.pause();
-                audioIcon.classList.replace('bx-pause', 'bx-play');  // Ganti ikon pause menjadi play
-                console.log('Audio is paused');  // Cek di console
+                audioIcon.classList.replace('bx-pause', 'bx-play');
             }
         }
     </script>
