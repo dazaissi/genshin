@@ -130,6 +130,7 @@ nav a {
     width: 30%;
     text-align: center;
 }
+
 </style>
 <body>
     <!-- Navigation Bar -->
@@ -161,34 +162,59 @@ nav a {
         <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette">
     </section>
 
-    <!-- Search and Artwork Section -->
-    <section class="search-section">
+    <section class="content">
+        <!-- ARTWORK SECTION -->
         <div class="artwork">
-            <h2>Artwork &gt;</h2>
-            <div class="artwork-images">
-                <img src="my-project-1/assets/images/mas5.jpg" alt="Artwork 1">
-                <img src="my-project-1/assets/images/mas6.jpeg" alt="Artwork 2">
+            <h2>Artwork <span>&#x276F;</span></h2>
+            <div class="artwork-container">
+                <div class="artwork-card">
+                    <img src="images/art1.jpg" alt="Artwork 1">
+                    <p>by @Sukocchi</p>
+                </div>
+                <div class="artwork-card">
+                    <img src="images/art2.jpg" alt="Artwork 2">
+                    <p>by @RenChain</p>
+                </div>
             </div>
             <button class="view-more">View More</button>
         </div>
-
+    
+        <!-- RECENT SEARCH -->
         <div class="recent-search">
             <h2>Recent Search</h2>
-            <ul>
-                <li>🔍 Layla ascension material <span class="close">×</span></li>
-                <li>🔍 Layla build <span class="close">×</span></li>
-                <li>🔍 Kalpalata lotus locations <span class="close">×</span></li>
-                <li>🔍 Layla cosplay <span class="close">×</span></li>
-                <li>🔍 Layla Wallpaper <span class="close">×</span></li>
-            </ul>
+            <div class="search-list">
+                <div class="search-item">🔍 Layla ascension material <span class="close-btn">✖</span></div>
+                <div class="search-item">🔍 Layla build <span class="close-btn">✖</span></div>
+                <div class="search-item">🔍 Kalpalata lotus locations <span class="close-btn">✖</span></div>
+                <div class="search-item dark">🔍 Layla cosplay <span class="close-btn">✖</span></div>
+                <input type="text" class="search-bar" placeholder="🔍 Layla Wallpaper">
+            </div>
         </div>
-    </section>
-
-    <!-- Character Info -->
-    <section class="info-section">
-        <div class="info-card">❄ <b>Cryo character</b> - Layla is a Cryo character...</div>
-        <div class="info-card">🌿 <b>Sumeru</b> - Sumeru is one of the seven regions...</div>
-        <div class="info-card">🏛 <b>Akademiya</b> - Layla studies at the Akademiya...</div>
+    
+        <!-- INFORMATION SECTION -->
+        <div class="info-section">
+            <div class="info-card">
+                <img src="images/cryo-icon.png" alt="Cryo">
+                <div class="info-text">
+                    <h3>Cryo Character</h3>
+                    <p>Cryo is one of the seven elements in Sumeru.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="images/sumeru-icon.png" alt="Sumeru">
+                <div class="info-text">
+                    <h3>Sumeru</h3>
+                    <p>Sumeru is known for its knowledge and wisdom.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <img src="images/akademiya-icon.png" alt="Akademiya">
+                <div class="info-text">
+                    <h3>Akademiya</h3>
+                    <p>The Akademiya is the main educational center of Sumeru.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <script>
