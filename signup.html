@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
-      <link rel="icon" href="my-project-1/assets/images/mas3.webp" type="image/x-icon">
+    <link rel="icon" href="my-project-1/assets/images/mas3.webp" type="image/x-icon">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
 
@@ -161,12 +161,12 @@
         color: #213555;
     }
 
-     /* Style for error message */
-     .error-message {
-            color: red;
-            font-size: 12px;
-            display: none;
-        }
+    /* Style for error message */
+    .error-message {
+        color: red;
+        font-size: 12px;
+        display: none;
+    }
 
 </style>
 
@@ -202,25 +202,24 @@
             </div>
 
             <div class="input-box">
-                <input type="password" placeholder="Password" required
+                <input type="password" id="password" placeholder="Password" required
                 pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                 title="Password must contain at least 8 characters, including letters, numbers, and symbols." />
                 <i class="bx bxs-lock-alt"></i>
             </div>
 
-              <!-- Error Message -->
-              <div class="error-message" id="error-message">
+            <!-- Error Message -->
+            <div class="error-message" id="error-message">
                 Password must contain at least 8 characters, including letters, numbers, and symbols.
             </div>
 
-            
             <div class="remember-forgot">
                 <label><input type="checkbox"> I have read and understood the terms and conditions.</label>
             </div>
 
             <button type="submit" class="btn">SIGN UP</button>
 
-             <div class="register-link">
+            <div class="register-link">
                 <p>Already have an account? <a href="index.html">Sign In!</a></p>
             </div>
         </form>
@@ -241,6 +240,7 @@
                 audioIcon.classList.replace('bx-pause', 'bx-play');
             }
         }
+
         // Login function (mock)
         function login() {
             // If successful, go to homepage
