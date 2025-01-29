@@ -4,195 +4,238 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGN UP</title>
+    <title>LOGIN</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+</head>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
-        }
+<style>
+    @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: url('my-project-1/assets/video/genshin.gif') no-repeat center center fixed;
-            background-size: cover;
-            background-position: center;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
 
-        .wrapper {
-            width: 420px;
-            background: transparent;
-            border: 2px solid rgba(225, 255, 255, .2);
-            backdrop-filter: blur(3px);
-            color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-            border-radius: 10px;
-            padding: 30px 40px;
-        }
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url('my-project-1/assets/video/genshin.gif') no-repeat center center fixed;
+        background-size: cover;
+        background-position: center;
+    }
 
-        .wrapper h1 {
-            font-size: 35px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    audio {
+        display: none;
+    }
 
-        .input-box {
-            position: relative;
-            width: 100%;
-            height: 45px;
-            margin: 15px 0;
-        }
+    .wrapper {
+        width: 420px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 2px solid rgba(225, 255, 255, .2);
+        backdrop-filter: blur(20px);
+        color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+        border-radius: 10px;
+        padding: 30px 40px;
+    }
 
-        .input-box input {
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            border: 2px solid rgba(225, 255, 255, .2);
-            border-radius: 50px;
-            font-size: 16px;
-            color: #fff;
-            padding: 10px 40px; /* Add padding for icons */
-            padding-left: 40px; /* Add left padding for the icon */
-            transition: all 0.3s ease-in-out;
-        }
+    .wrapper h1 {
+        font-size: 35px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
 
-        .input-box input::placeholder {
-            color: #ddd;
-        }
+    .input-box {
+        position: relative;
+        width: 100%;
+        height: 45px;
+        margin: 15px 0;
+    }
 
-        .input-box input:focus {
-            border-color: #fff;
-            outline: none;
-        }
+    .input-box input {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        border: 2px solid rgba(225, 255, 255, .2);
+        border-radius: 48px;
+        font-size: 16px;
+        color: #fff;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+    }
 
-        /* Icon position inside input box */
-        .input-box i {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 20px;
-            color: #fff;
-        }
+    .input-box input::placeholder {
+        color: #ddd;
+    }
 
-        .bx-envelope {
-            left: 10px; /* Position the envelope icon on the left */
-        }
+    .input-box input:focus {
+        border-color: #fff;
+        outline: none;
+    }
 
-        .bx-user-circle {
-            left: 10px; /* Position the user icon on the left */
-        }
+    .input-box i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        color: #fff;
+    }
 
-        .bx-lock-alt {
-            left: 10px; /* Position the lock icon on the left */
-        }
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14.5px;
+        margin-bottom: 15px;
+    }
 
-        .bx-show, .bx-hide {
-            right: 10px; /* Position the eye icon on the right */
-            cursor: pointer;
-        }
+    .remember-forgot label input {
+        accent-color: #fff;
+        margin-right: 5px;
+    }
 
-        /* Style for error message */
-        .error-message {
+    .remember-forgot a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .remember-forgot a:hover {
+        text-decoration: underline;
+    }
+
+    .btn {
+        width: 100%;
+        height: 45px;
+        background: #2E5077;
+        border: none;
+        border-radius: 40px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+        background: #3E5879;
+    }
+
+    .register-link {
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .register-link p a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .register-link p a:hover {
+        text-decoration: underline;
+    }
+
+    .audio-controls {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 100;
+    }
+
+    .audio-controls i {
+        font-size: 40px;
+        cursor: pointer;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 50%;
+        padding: 10px;
+    }
+
+    .audio-controls i:hover {
+        color: #213555;
+    }
+
+     /* Style for error message */
+     .error-message {
             color: red;
             font-size: 12px;
             display: none;
         }
 
-        /* Styling button */
-        .btn {
-            width: 100%;
-            height: 45px;
-            background: #2E5077;
-            border: none;
-            border-radius: 40px;
-            color: white;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease-in-out;
-        }
+</style>
 
-        .btn:hover {
-            background: #3E5879;
-        }
-
-        /* Center "Already have an account?" text */
-        .register-link {
-            text-align: center;
-            margin-top: 15px;
-        }
-    </style>
-</head>
 <body>
+    <!-- Audio -->
+    <audio id="audio" autoplay loop>
+        <source src="my-project-1/assets/audio/genshin-bgm.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
 
+    <!-- Audio Control -->
+    <div class="audio-controls">
+        <i id="audio-icon" class="bx bx-play" onclick="toggleAudio()"></i>
+    </div>
+
+    <!-- Form -->
     <div class="wrapper">
         <form onsubmit="event.preventDefault(); login();">
             <h1>SIGN UP</h1>
 
-            <!-- Email -->
             <div class="input-box">
-                <i class='bx bxs-envelope'></i>
                 <input type="email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
             </div>
 
-            <!-- Date of Birth -->
             <div class="input-box">
-                <input type="date" placeholder="Your date of birth" required>
+                <input type="date" placeholder="Birthday" required>
             </div>
 
-            <!-- Username -->
             <div class="input-box">
-                <i class="bx bxs-user-circle"></i>
                 <input type="text" placeholder="Username" required>
+                <i class="bx bxs-user-circle"></i>
             </div>
 
-            <!-- Password -->
             <div class="input-box">
+                <input type="password" placeholder="Password" required
+                pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+                title="Password must contain at least 8 characters, including letters, numbers, and symbols." />
                 <i class="bx bxs-lock-alt"></i>
-                <input type="password" id="password" placeholder="Password" required
-                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
-                    title="Password must contain at least 8 characters, including letters, numbers, and symbols." />
-                <i class="bx bx-show" id="eye-icon" onclick="togglePasswordVisibility()"></i> <!-- Eye icon -->
             </div>
 
-            <!-- Error Message -->
-            <div class="error-message" id="error-message">
+              <!-- Error Message -->
+              <div class="error-message" id="error-message">
                 Password must contain at least 8 characters, including letters, numbers, and symbols.
             </div>
 
+            
             <div class="remember-forgot">
                 <label><input type="checkbox"> I have read and understood the terms and conditions.</label>
             </div>
 
             <button type="submit" class="btn">SIGN UP</button>
-            <div class="register-link">
-                <p>Already have an account? <a href="index.html">Sign In!</a></p>
-            </div>
         </form>
     </div>
 
     <script>
-        // Toggle password visibility
-        function togglePasswordVisibility() {
-            const passwordField = document.getElementById('password');
-            const eyeIcon = document.getElementById('eye-icon');
 
-            if (passwordField.type === "password") {
-                passwordField.type = "text";  // Show password
-                eyeIcon.classList.replace('bx-show', 'bx-hide'); // Change to hide icon
+        // Toggle audio and icon
+        function toggleAudio() {
+            const audio = document.getElementById('audio');
+            const audioIcon = document.getElementById('audio-icon');
+
+            if (audio.paused) {
+                audio.play();
+                audioIcon.classList.replace('bx-play', 'bx-pause');
             } else {
-                passwordField.type = "password";  // Hide password
-                eyeIcon.classList.replace('bx-hide', 'bx-show'); // Change to show icon
+                audio.pause();
+                audioIcon.classList.replace('bx-pause', 'bx-play');
             }
         }
-
         // Login function (mock)
         function login() {
             // If successful, go to homepage
