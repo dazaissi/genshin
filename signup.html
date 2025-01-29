@@ -55,10 +55,10 @@
             height: 100%;
             background: transparent;
             border: 2px solid rgba(225, 255, 255, .2);
-            border-radius: 48px;
+            border-radius: 50px;
             font-size: 16px;
             color: #fff;
-            padding: 10px 30px 10px 40px; /* Adjust padding to make room for icons */
+            padding: 10px 25px;
             transition: all 0.3s ease-in-out;
         }
 
@@ -71,7 +71,6 @@
             outline: none;
         }
 
-        /* Icon position adjustments */
         .input-box i {
             position: absolute;
             top: 50%;
@@ -80,25 +79,22 @@
             color: #fff;
         }
 
-        /* Email icon position */
-        .bx-envelope {
-            left: 10px; /* Position for email icon */
-        }
-
-        /* Username icon position */
-        .bx-user-circle {
-            left: 10px; /* Position for username icon */
-        }
-
-        /* Lock icon position */
+        /* Icon lock */
         .bx-lock-alt {
-            left: 10px; /* Position for lock icon */
+            left: 15px;
         }
 
         /* Eye icon position */
         .bx-show, .bx-hide {
-            right: 15px; /* Position for the eye icon on the right */
+            right: 15px;
             cursor: pointer;
+        }
+
+        /* Style untuk pesan error */
+        .error-message {
+            color: red;
+            font-size: 12px;
+            display: none;
         }
 
         /* Styling button */
@@ -129,7 +125,7 @@
             <!-- email -->
             <div class="input-box">
                 <input type="email" placeholder="Email" required>
-                <i class='bx bxs-envelope'></i> <!-- Email icon -->
+                <i class='bx bxs-envelope'></i>
             </div>
 
             <!-- tanggal lahir -->
@@ -140,7 +136,7 @@
             <!-- username -->
             <div class="input-box">
                 <input type="text" placeholder="Username" required>
-                <i class="bx bxs-user-circle"></i> <!-- Username icon -->
+                <i class="bx bxs-user-circle"></i>
             </div>
 
             <!-- password -->
@@ -148,7 +144,7 @@
                 <input type="password" id="password" placeholder="Password" required
                     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                     title="Password wajib memiliki simbol dan minimal 8 karakter, dengan huruf, angka, dan simbol." />
-                <i class="bx bxs-lock-alt"></i> <!-- Lock icon -->
+                <i class="bx bxs-lock-alt"></i>
                 <i class="bx bx-show" id="eye-icon" onclick="togglePasswordVisibility()"></i> <!-- Eye icon -->
             </div>
 
