@@ -43,7 +43,7 @@
            width: 420px;
         background: transparent;
         border: 2px solid rgba(225, 255, 255, .2);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(10px);
         color: #fff;
         box-shadow: 0 0 10px rgba(0, 0, 0, .2);
         border-radius: 10px;
@@ -76,7 +76,12 @@
         }
 
         .input-box input::placeholder {
-            color: #fff;
+            color: #ddd;
+        }
+
+        .input-box input:focus {
+        border-color: #fff;
+        outline: none;
         }
 
         .input-box i {
