@@ -161,6 +161,18 @@
     .audio-controls i:hover {
         color: #213555;
     }
+
+      /* Style untuk pesan error */
+    .error-message {
+        color: red;
+        font-size: 12px;
+        display: none;
+    }
+
+    /* Style untuk input yang tidak valid */
+    .input-box input:invalid {
+        border-color: red;
+    }
 </style>
 
 <body>
@@ -199,8 +211,15 @@
 
              <!-- password -->
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" required
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                    title="Password wajib memiliki simbol dan minimal 8 karakter, dengan huruf, angka, dan simbol." />
                 <i class="bx bxs-lock-alt"></i>
+            </div>
+
+            <!-- Pesan error -->
+            <div class="error-message" id="error-message">
+                Password wajib memiliki simbol dan minimal 8 karakter.
             </div>
 
             <div class="remember-forgot">
@@ -233,6 +252,24 @@
                 audio.pause();
                 audioIcon.classList.replace('bx-pause', 'bx-play');
             }
+        }
+
+     // Menangani pesan error jika password tidak sesuai dengan pola
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('error-message');
+
+        passwordInput.addEventListener('input', function() {
+            if (passwordInput.validity.valid) {
+                errorMessage.style.display = 'none'; // Hide error message if valid
+            } else {
+                errorMessage.style.display = 'block'; // Show error message if invalid
+            }
+        });
+
+        // Login function
+        function login() {
+            // If successful, go to homepage
+            window.location.href = "index.html";
         }
     </script>
 </body>
