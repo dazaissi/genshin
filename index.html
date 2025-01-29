@@ -29,13 +29,30 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+   /* Style default untuk link navbar */
 nav a {
     margin: 0 15px;
     text-decoration: none;
     color: black;
     font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 
+/* Efek hover (saat kursor diarahkan ke tombol) */
+nav a:hover {
+    background: #6c78b3;
+    color: white;
+}
+
+/* Efek active (untuk halaman yang sedang aktif) */
+nav a.active {
+    background: #4e5a99;
+    color: white;
+    font-weight: 600;
+}
+   
 .buttons button {
     padding: 8px 15px;
     border: none;
@@ -268,7 +285,7 @@ nav a {
             <div class="info-card">
                 <img src="images/cryo-icon.png" alt="Cryo">
                 <div class="info-text">
-                    <h3>Cryo Character</h3>
+                    <h3>Hydro Character</h3>
                     <p>Cryo is one of the seven elements in Sumeru.</p>
                 </div>
             </div>
@@ -289,16 +306,31 @@ nav a {
         </div>
     </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let closeButtons = document.querySelectorAll(".close-btn");
+</script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Mengatur event listener untuk tombol close di recent search
+    let closeButtons = document.querySelectorAll(".close-btn");
 
-            closeButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    this.parentElement.remove();
-                });
-            });
+    closeButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            this.parentElement.remove();
         });
+    });
+
+    // Mengatur event listener untuk navbar links
+    let navLinks = document.querySelectorAll("nav a");
+
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
+            // Hapus class "active" dari semua link
+            navLinks.forEach(nav => nav.classList.remove("active"));
+
+            // Tambahkan class "active" ke link yang diklik
+            this.classList.add("active");
+        });
+    });
+});
+
     </script>
 </body>
 
