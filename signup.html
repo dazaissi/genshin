@@ -7,7 +7,7 @@
     <title>SIGN UP</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     <style>
-        @import url(https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        @import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
 
         * {
             margin: 0;
@@ -59,6 +59,7 @@
             font-size: 16px;
             color: #fff;
             padding: 10px 40px; /* Add padding for icons */
+            padding-left: 40px; /* Add left padding for the icon */
             transition: all 0.3s ease-in-out;
         }
 
@@ -81,19 +82,19 @@
         }
 
         .bx-envelope {
-            left: 15px; /* Position the envelope icon on the left */
+            left: 10px; /* Position the envelope icon on the left */
         }
 
         .bx-user-circle {
-            left: 15px; /* Position the user icon on the left */
+            left: 10px; /* Position the user icon on the left */
         }
 
         .bx-lock-alt {
-            left: 15px; /* Position the lock icon on the left */
+            left: 10px; /* Position the lock icon on the left */
         }
 
         .bx-show, .bx-hide {
-            right: 15px; /* Position the eye icon on the right */
+            right: 10px; /* Position the eye icon on the right */
             cursor: pointer;
         }
 
@@ -137,8 +138,8 @@
 
             <!-- email -->
             <div class="input-box">
-                <input type="email" placeholder="Email" required>
                 <i class='bx bxs-envelope'></i>
+                <input type="email" placeholder="Email" required>
             </div>
 
             <!-- tanggal lahir -->
@@ -148,16 +149,16 @@
 
             <!-- username -->
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
                 <i class="bx bxs-user-circle"></i>
+                <input type="text" placeholder="Username" required>
             </div>
 
             <!-- password -->
             <div class="input-box">
+                <i class="bx bxs-lock-alt"></i>
                 <input type="password" id="password" placeholder="Password" required
                     pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
                     title="Password wajib memiliki simbol dan minimal 8 karakter, dengan huruf, angka, dan simbol." />
-                <i class="bx bxs-lock-alt"></i>
                 <i class="bx bx-show" id="eye-icon" onclick="togglePasswordVisibility()"></i> <!-- Eye icon -->
             </div>
 
