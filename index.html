@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,133 +11,134 @@
 
 <style>
     /* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f5f7fb;
-    margin: 0;
-    padding: 0;
-}
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #f5f7fb;
+        margin: 0;
+        padding: 0;
+    }
 
-/* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
-    background: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
+    /* Header */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
-nav a {
-    margin: 0 15px;
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-}
+    nav a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: black;
+        font-weight: 500;
+    }
 
-.buttons button {
-    padding: 8px 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    .buttons button {
+        padding: 8px 15px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-.login {
-    background: transparent;
-    border: 1px solid black;
-}
+    .login {
+        background: transparent;
+        border: 1px solid black;
+    }
 
-.signup {
-    background: #6c78b3;
-    color: white;
-}
+    .signup {
+        background: #6c78b3;
+        color: white;
+    }
 
-/* Banner */
-.banner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #5d73ab;
-    color: white;
-    padding: 40px;
-    border-radius: 10px;
-    margin: 20px;
-}
+    /* Banner */
+    .banner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #5d73ab;
+        color: white;
+        padding: 40px;
+        border-radius: 10px;
+        margin: 20px;
+    }
 
-.banner-content {
-    max-width: 50%;
-}
+    .banner-content {
+        max-width: 50%;
+    }
 
-.banner img {
-    width: 250px;
-    border-radius: 10px;
-}
+    .banner img {
+        width: 250px;
+        border-radius: 10px;
+    }
 
-/* Search Section */
-.search-section {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-}
+    /* Search Section */
+    .search-section {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
 
-.artwork, .recent-search {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 48%;
-}
+    .artwork,
+    .recent-search {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        width: 48%;
+    }
 
-.artwork-images img {
-    width: 48%;
-    border-radius: 10px;
-    margin-right: 5px;
-}
+    .artwork-images img {
+        width: 48%;
+        border-radius: 10px;
+        margin-right: 5px;
+    }
 
-.view-more {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    background: #6c78b3;
-    color: white;
-    border-radius: 5px;
-}
+    .view-more {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        background: #6c78b3;
+        color: white;
+        border-radius: 5px;
+    }
 
-.recent-search ul {
-    list-style: none;
-    padding: 0;
-}
+    .recent-search ul {
+        list-style: none;
+        padding: 0;
+    }
 
-.recent-search li {
-    background: #e3e6f3;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
-    cursor: pointer;
-}
+    .recent-search li {
+        background: #e3e6f3;
+        padding: 8px;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
 
-/* Info Section */
-.info-section {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
-}
+    /* Info Section */
+    .info-section {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
 
-.info-card {
-    background: white;
-    padding: 15px;
-    border-radius: 10px;
-    width: 30%;
-    text-align: center;
-}
-
+    .info-card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        width: 30%;
+        text-align: center;
+    }
 </style>
+
 <body>
     <!-- Navigation Bar -->
     <header>
-        <div class="logo" src="my-project-1/assets/images/logo.webp">
-
+        <div class="logo">
+            <!-- Logo goes here, e.g., <img src="logo.webp" alt="Logo"> -->
         </div>
         <nav>
             <a href="#" class="active">Home</a>
@@ -153,10 +155,9 @@ nav a {
     <section class="banner">
         <div class="banner-content">
             <h1>Neuvilette</h1>
-            <p>He is he Iudex of Fontaine, and the leader of the Marechaussee Phantom.
-             While Neuvillette upholds the rules of the court with utmost reverence, he is quite aloof 
-                <br> when dealing with human emotions and often distances himself from the public eye.
-            </p>
+            <p>He is the Iudex of Fontaine, and the leader of the Marechaussee Phantom.
+                While Neuvillette upholds the rules of the court with utmost reverence, he is quite aloof
+                when dealing with human emotions and often distances himself from the public eye.</p>
             <a href="#" class="read-more">Read More</a>
         </div>
         <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette">
@@ -178,7 +179,7 @@ nav a {
             </div>
             <button class="view-more">View More</button>
         </div>
-    
+
         <!-- RECENT SEARCH -->
         <div class="recent-search">
             <h2>Recent Search</h2>
@@ -190,7 +191,7 @@ nav a {
                 <input type="text" class="search-bar" placeholder="🔍 Layla Wallpaper">
             </div>
         </div>
-    
+
         <!-- INFORMATION SECTION -->
         <div class="info-section">
             <div class="info-card">
@@ -218,15 +219,16 @@ nav a {
     </section>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    let closeButtons = document.querySelectorAll(".recent-search .close");
-    
-    closeButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            this.parentElement.remove();
+        document.addEventListener("DOMContentLoaded", function () {
+            let closeButtons = document.querySelectorAll(".close-btn");
+
+            closeButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    this.parentElement.remove();
+                });
+            });
         });
-    });
-});
     </script>
 </body>
+
 </html>
