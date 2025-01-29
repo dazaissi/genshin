@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layla Fanpage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    /* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fb;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+}
+
+.buttons button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.login {
+    background: transparent;
+    border: 1px solid black;
+}
+
+.signup {
+    background: #6c78b3;
+    color: white;
+}
+
+/* Banner */
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #5d73ab;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+.banner-content {
+    max-width: 50%;
+}
+
+.banner img {
+    width: 250px;
+    border-radius: 10px;
+}
+
+/* Search Section */
+.search-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.artwork, .recent-search {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 48%;
+}
+
+.artwork-images img {
+    width: 48%;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+.view-more {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #6c78b3;
+    color: white;
+    border-radius: 5px;
+}
+
+.recent-search ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent-search li {
+    background: #e3e6f3;
+    padding: 8px;
+    margin: 5px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+/* Info Section */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    text-align: center;
+}
+</style>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo"
+        href="my-project-1/assets/images/logo.webp"
+        >
+
+        </div>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#">Search</a>
+            <a href="#">Message</a>
+        </nav>
+        <div class="buttons">
+            <button class="login" href="signin.html">Log in</button>
+            <button class="signup" href="signup.html">Sign up</button>
+        </div>
+    </header>
+
+    <!-- Main Banner -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Neuvilette</h1>
+            <p>He is he Iudex of Fontaine, and the leader of the Marechaussee Phantom.</p>
+            <a href="#" class="read-more">Read More</a>
+        </div>
+        <img src="images/layla.png" alt="Layla">
+    </section>
+
+    <!-- Search and Artwork Section -->
+    <section class="search-section">
+        <div class="artwork">
+            <h2>Artwork &gt;</h2>
+            <div class="artwork-images">
+                <img src="images/art1.jpg" alt="Artwork 1">
+                <img src="images/art2.jpg" alt="Artwork 2">
+            </div>
+            <button class="view-more">View More</button>
+        </div>
+
+        <div class="recent-search">
+            <h2>Recent Search</h2>
+            <ul>
+                <li>🔍 Layla ascension material <span class="close">×</span></li>
+                <li>🔍 Layla build <span class="close">×</span></li>
+                <li>🔍 Kalpalata lotus locations <span class="close">×</span></li>
+                <li>🔍 Layla cosplay <span class="close">×</span></li>
+                <li>🔍 Layla Wallpaper <span class="close">×</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Character Info -->
+    <section class="info-section">
+        <div class="info-card">❄ <b>Cryo character</b> - Layla is a Cryo character...</div>
+        <div class="info-card">🌿 <b>Sumeru</b> - Sumeru is one of the seven regions...</div>
+        <div class="info-card">🏛 <b>Akademiya</b> - Layla studies at the Akademiya...</div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    let closeButtons = document.querySelectorAll(".recent-search .close");
+    
+    closeButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            this.parentElement.remove();
+        });
+    });
+});
+    </script>
+</body>
+</html>
