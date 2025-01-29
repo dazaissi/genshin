@@ -58,7 +58,7 @@
             border-radius: 50px;
             font-size: 16px;
             color: #fff;
-            padding: 10px 25px;
+            padding: 10px 40px; /* Add padding for icons */
             transition: all 0.3s ease-in-out;
         }
 
@@ -71,7 +71,7 @@
             outline: none;
         }
 
-        /* Icon position adjustments */
+        /* Icon position inside input box */
         .input-box i {
             position: absolute;
             top: 50%;
@@ -80,24 +80,20 @@
             color: #fff;
         }
 
-        /* Email icon position */
         .bx-envelope {
-            left: 15px;
+            left: 15px; /* Position the envelope icon on the left */
         }
 
-        /* Username icon position */
         .bx-user-circle {
-            left: 15px;
+            left: 15px; /* Position the user icon on the left */
         }
 
-        /* Lock icon position */
         .bx-lock-alt {
-            left: 15px;
+            left: 15px; /* Position the lock icon on the left */
         }
 
-        /* Eye icon position */
         .bx-show, .bx-hide {
-            right: 15px;
+            right: 15px; /* Position the eye icon on the right */
             cursor: pointer;
         }
 
@@ -124,6 +120,12 @@
 
         .btn:hover {
             background: #3E5879;
+        }
+
+        /* Center "Already have an account?" text */
+        .register-link {
+            text-align: center;
+            margin-top: 15px;
         }
     </style>
 </head>
