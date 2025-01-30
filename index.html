@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-   <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neuvilette</title>
-     <link rel="icon" href="my-project-1/assets/images/mas0.gif" type="image/x-icon">
+    <link rel="icon" href="my-project-1/assets/images/mas0.gif" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-
-<style>
-  /* General Styles */
+    <link rel="stylesheet" href="styles.css">
+  </head>
+   
+  <style>
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f7fb;
@@ -28,11 +28,20 @@ header {
     padding: 15px 50px;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
-   /* Style default untuk link navbar */
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
 nav a {
-    margin: 0 15px;
     text-decoration: none;
     color: black;
     font-weight: 500;
@@ -41,19 +50,18 @@ nav a {
     transition: all 0.3s ease;
 }
 
-/* Efek hover (saat kursor diarahkan ke tombol) */
 nav a:hover {
     background: #6c78b3;
     color: white;
 }
 
-/* Efek active (untuk halaman yang sedang aktif) */
 nav a.active {
     background: #4e5a99;
     color: white;
     font-weight: 600;
 }
-   
+
+/* Buttons */
 .buttons button {
     padding: 8px 15px;
     border: none;
@@ -61,53 +69,16 @@ nav a.active {
     border-radius: 5px;
 }
 
-/* Tombol Sign in */
-.login {
-    background: transparent;
-    border: 2px solid black; /* Tambahkan border hitam */
-    color: black;
-    padding: 8px 15px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* Hover efek untuk Sign in */
-.login:hover {
-    background: black;
-    color: white;
-}
-
-/* Tombol Sign up */
-.signup {
-    background: #6c78b3;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 5px;
-    border: 2px solid #6c78b3; /* Tambahkan border sesuai dengan warna background */
-    transition: all 0.3s ease;
-}
-
-/* Hover efek untuk Sign up */
-.signup:hover {
-    background: white;
-    color: #6c78b3;
-}
-    .logo img {
-        width: 120px;
-        height: auto;
-    }
-
 /* Banner */
 .banner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #5d73ab, #8496c9); /* Gradien warna */
+    background: linear-gradient(135deg, #5d73ab, #8496c9);
     color: white;
     padding: 40px;
     border-radius: 15px;
     margin: 20px;
-    position: relative;
 }
 
 .banner-content {
@@ -119,15 +90,15 @@ nav a.active {
     border-radius: 10px;
 }
 
-/* SEARCH & CONTENT SECTION */
+/* Content Grid */
 .content {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
     margin: 30px;
 }
 
-/* ARTWORK SECTION */
+/* Artwork Section */
 .artwork {
     background: white;
     padding: 20px;
@@ -135,21 +106,9 @@ nav a.active {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.artwork h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
 .artwork-container {
     display: flex;
     gap: 10px;
-    margin-bottom: 10px;
-}
-
-.artwork-card {
-    flex: 1;
-    text-align: center;
 }
 
 .artwork-card img {
@@ -157,7 +116,7 @@ nav a.active {
     border-radius: 10px;
 }
 
-.view-more {
+     .view-more {
     width: 100%;
     padding: 10px;
     border: none;
@@ -170,7 +129,7 @@ nav a.active {
 
 /* RECENT SEARCH */
 .recent-search {
-    background: white;
+    background: transparent;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -242,120 +201,189 @@ nav a.active {
 
 </style>
 
-<body>
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    header {
+        padding: 15px 20px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .banner-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .banner img {
+        width: 220px;
+    }
+
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: white;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .buttons {
+        display: none;
+    }
+
+    .banner img {
+        width: 180px;
+    }
+}
+     
+  </style>
+  <body>
     <!-- Navigation Bar -->
     <header>
-        <div class="logo">
-            <a href="index.html">
-            <img src="my-project-1/assets/images/logo.webp" alt="Logo">
-        </div>
-       
-        <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">Search</a>
-            <a href="#">Message</a>
-        </nav>
-        <div class="buttons">
-            <button class="login"><a href="signin.html">Sign in</a></button>
-            <button class="signup"><a href="signup.html">Sign up</a></button>
-        </div>
+      <div class="logo">
+        <a href="index.html">
+          <img src="my-project-1/assets/images/logo.webp" alt="Logo">
+        </a>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="active">Home</a>
+        <a href="#">Search</a>
+        <a href="#">Message</a>
+      </nav>
+
+      <div class="buttons">
+        <button class="login"><a href="signin.html">Sign in</a></button>
+        <button class="signup"><a href="signup.html">Sign up</a></button>
+      </div>
+
+      <!-- Hamburger Menu for Mobile -->
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
     </header>
 
     <!-- Main Banner -->
     <section class="banner">
-        <div class="banner-content">
-            <h1><strong>Neuvilette</strong></h1>
-            <h3>Ordainer of Inexorable Judgment</h3>
-            <p>He is the Iudex of Fontaine, and the leader of the Marechaussee Phantom.
-                While Neuvillette upholds the rules of the court with utmost reverence, he is quite aloof
-                when dealing with human emotions and often distances himself from the public eye.</p>
-            <a href="https://genshin-impact.fandom.com/wiki/Neuvillette" class="read-more">Read More</a>
-        </div>
-        <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette">
+      <div class="banner-content">
+        <h1><strong>Neuvilette</strong></h1>
+        <h3>Ordainer of Inexorable Judgment</h3>
+        <p>He is the Iudex of Fontaine, and the leader of the Marechaussee Phantom.</p>
+        <a href="https://genshin-impact.fandom.com/wiki/Neuvillette" class="read-more">Read More</a>
+      </div>
+      <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette">
     </section>
 
     <section class="content">
-        <!-- ARTWORK SECTION -->
-        <div class="artwork">
-            <h2>Artwork <span>&#x276F;</span></h2>
-            <div class="artwork-container">
-                <div class="artwork-card">
-                    <img src="my-project-1/assets/images/mas5.jpg" alt="Artwork 1">
-                    <p>pacarku</p>
-                </div>
-                <div class="artwork-card">
-                    <img src="my-project-1/assets/images/mas6.jpeg" alt="Artwork 2">
-                    <p>milikku.</p>
-                </div>
-            </div>
-            <button class="view-more">View More</button>
+      <!-- ARTWORK SECTION -->
+      <div class="artwork">
+        <h2>Artwork</h2>
+        <div class="artwork-container">
+          <div class="artwork-card">
+            <img src="my-project-1/assets/images/mas5.jpg" alt="Artwork 1">
+            <p>pacarku</p>
+          </div>
+          <div class="artwork-card">
+            <img src="my-project-1/assets/images/mas6.jpeg" alt="Artwork 2">
+            <p>milikku.</p>
+          </div>
         </div>
+        <button class="view-more">View More</button>
+      </div>
 
-        <!-- RECENT SEARCH -->
-        <div class="recent-search">
-            <h2>Recent Search</h2>
-            <div class="search-list">
-                <div class="search-item">🔍 Layla ascension material <span class="close-btn">✖</span></div>
-                <div class="search-item">🔍 Layla build <span class="close-btn">✖</span></div>
-                <div class="search-item">🔍 Kalpalata lotus locations <span class="close-btn">✖</span></div>
-                <div class="search-item dark">🔍 Layla cosplay <span class="close-btn">✖</span></div>
-                <input type="text" class="search-bar" placeholder="🔍 Layla Wallpaper">
-            </div>
+      <!-- RECENT SEARCH -->
+      <div class="recent-search">
+        <h2>Recent Search</h2>
+        <div class="search-list">
+          <div class="search-item">🔍 Layla ascension material <span class="close-btn">✖</span></div>
+          <div class="search-item">🔍 Layla build <span class="close-btn">✖</span></div>
+          <div class="search-item">🔍 Kalpalata lotus locations <span class="close-btn">✖</span></div>
+          <div class="search-item dark">🔍 Layla cosplay <span class="close-btn">✖</span></div>
+          <input type="text" class="search-bar" placeholder="🔍 Layla Wallpaper">
         </div>
+      </div>
 
-        <!-- INFORMATION SECTION -->
-        <div class="info-section">
-            <div class="info-card">
-                <img src="my-project-1/assets/images/hydro.png" alt="Hydro">
-                <div class="info-text">
-                    <h3>Hydro Character</h3>
-                    <p>Hydro is one of the seven Elements.
-Its associated Archon was Focalors, whose domain was Fontaine.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <img src="my-project-1/assets/images/card.webp" alt="name-card">
-                <div class="info-text">
-                    <h3>Neuvillette: Surge</h3>
-                    <p>Neuvillette: Surge is a Namecard obtained by reaching Friendship Level 10 with Neuvillette.</p>
-                </div>
-            </div>
-            <div class="info-card">
-                <img src="my-project-1/assets/images/Fontaine.webp" alt="Fontaine">
-                <div class="info-text">
-                    <h3>Fontaine</h3>
-                    <p>Fontaine is one of the seven regions of Teyvat. It is the nation that worshipped Focalors, the Hydro Archon and God of Justice.</p>
-                </div>
-            </div>
+      <!-- INFORMATION SECTION -->
+      <div class="info-section">
+        <div class="info-card">
+          <img src="my-project-1/assets/images/hydro.png" alt="Hydro">
+          <div class="info-text">
+            <h3>Hydro Character</h3>
+            <p>Hydro is one of the seven Elements. Its associated Archon was Focalors, whose domain was Fontaine.</p>
+          </div>
         </div>
+        <div class="info-card">
+          <img src="my-project-1/assets/images/card.webp" alt="name-card">
+          <div class="info-text">
+            <h3>Neuvillette: Surge</h3>
+            <p>Neuvillette: Surge is a Namecard obtained by reaching Friendship Level 10 with Neuvillette.</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <img src="my-project-1/assets/images/Fontaine.webp" alt="Fontaine">
+          <div class="info-text">
+            <h3>Fontaine</h3>
+            <p>Fontaine is one of the seven regions of Teyvat. It is the nation that worshipped Focalors, the Hydro Archon and God of Justice.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-<script>
-   document.addEventListener("DOMContentLoaded", function () {
-    // Mengatur event listener untuk tombol close di recent search
-    let closeButtons = document.querySelectorAll(".close-btn");
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mengatur event listener untuk tombol close di recent search
+        let closeButtons = document.querySelectorAll(".close-btn");
 
-    closeButtons.forEach(button => {
-        button.addEventListener("click", function () {
+        closeButtons.forEach(button => {
+          button.addEventListener("click", function () {
             this.parentElement.remove();
+          });
         });
-    });
 
-    // Mengatur event listener untuk navbar links
-    let navLinks = document.querySelectorAll("nav a");
+        // Mengatur event listener untuk navbar links
+        let navLinks = document.querySelectorAll("nav a");
 
-    navLinks.forEach(link => {
-        link.addEventListener("click", function () {
+        navLinks.forEach(link => {
+          link.addEventListener("click", function () {
             // Hapus class "active" dari semua link
             navLinks.forEach(nav => nav.classList.remove("active"));
 
             // Tambahkan class "active" ke link yang diklik
             this.classList.add("active");
+          });
         });
-    });
-});
+      });
 
+      function toggleMenu() {
+        document.querySelector(".nav-menu").classList.toggle("active");
+      }
     </script>
-</body>
-
+  </body>
 </html>
