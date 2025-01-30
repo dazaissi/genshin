@@ -150,13 +150,20 @@ nav a.active {
     justify-content: space-between;
     align-items: center;
     background: #e3e6f3;
-    padding: 8px 5px;
+    padding: 5px 10px; /* Mengurangi padding supaya tidak terlalu lebar */
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
     width: auto; /* Membiarkan lebar mengikuti konten */
-    flex-grow: 1; /* Memungkinkan elemen mengisi ruang yang tersedia */
+    flex-grow: 0; /* Menjaga ukuran elemen tetap sesuai konten */
     max-width: 500px; /* Membatasi lebar maksimum */
     box-sizing: border-box;
+    font-size: 14px; /* Atur ukuran font supaya tidak terlalu besar */
+    gap: 10px; /* Memberikan jarak antar item di dalam .search-item */
+    word-wrap: break-word; /* Memungkinkan teks panjang untuk dibungkus */
+    overflow: hidden; /* Menyembunyikan teks yang keluar dari kontainer */
+    text-overflow: ellipsis; /* Menambahkan "..." jika teks terpotong */
+}
+
 }
 
 .search-item.dark {
