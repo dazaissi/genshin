@@ -8,7 +8,8 @@
     <link rel="icon" href="my-project-1/assets/images/mas0.gif" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <!-- AOS CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   </head>
    
   <style>
@@ -264,6 +265,7 @@ nav a.active {
 }
      
   </style>
+  
   <body>
     <!-- Navigation Bar -->
     <header>
@@ -289,62 +291,62 @@ nav a.active {
     </header>
 
     <!-- Main Banner -->
-    <section class="banner">
+    <section class="banner" data-aos="fade-up">
       <div class="banner-content">
         <h1><strong>Neuvilette</strong></h1>
         <h3>Ordainer of Inexorable Judgment</h3>
         <p>He is the Iudex of Fontaine, and the leader of the Marechaussee Phantom.</p>
         <a href="profile.html" class="read-more">Read More</a>
       </div>
-      <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette">
+      <img src="my-project-1/assets/images/masyh.png" alt="Neuvilette" data-aos="zoom-in">
     </section>
 
     <section class="content">
       <!-- ARTWORK SECTION -->
-      <div class="artwork">
+      <div class="artwork" data-aos="fade-left">
         <h2>Artwork</h2>
         <div class="artwork-container">
-          <div class="artwork-card">
+          <div class="artwork-card" data-aos="flip-left">
             <img src="my-project-1/assets/images/mas5.jpg" alt="Artwork 1">
             <p>pacarku</p>
           </div>
-          <div class="artwork-card">
+          <div class="artwork-card" data-aos="flip-right">
             <img src="my-project-1/assets/images/mas6.jpeg" alt="Artwork 2">
             <p>milikku.</p>
           </div>
         </div>
-        <button class="view-more">View More</button>
+        <button class="view-more" data-aos="fade-up">View More</button>
       </div>
 
       <!-- RECENT SEARCH -->
-      <div class="recent-search">
+      <div class="recent-search" data-aos="fade-right">
         <h2>Recent Search</h2>
         <div class="search-list">
-          <div class="search-item">🔍 Neuvilette ascension material <span class="close-btn">✖</span></div>
-          <div class="search-item">🔍 Neuvilette build <span class="close-btn">✖</span></div>
-          <div class="search-item">🔍 Neuvilette's birthday <span class="close-btn">✖</span></div>
-          <div class="search-item dark">🔍 Neuvilette character roles <span class="close-btn">✖</span></div>
-         <div class="search-item">🔍 Neuvilette wallpaper <span class="close-btn">✖</span></div>
+          <div class="search-item" data-aos="fade-up">🔍 Neuvilette ascension material <span class="close-btn">✖</span></div>
+          <div class="search-item" data-aos="fade-up">🔍 Neuvilette build <span class="close-btn">✖</span></div>
+          <div class="search-item" data-aos="fade-up">🔍 Neuvilette's birthday <span class="close-btn">✖</span></div>
+          <div class="search-item dark" data-aos="fade-up">🔍 Neuvilette character roles <span class="close-btn">✖</span></div>
+         <div class="search-item" data-aos="fade-up">🔍 Neuvilette wallpaper <span class="close-btn">✖</span></div>
         </div>
       </div>
 
       <!-- INFORMATION SECTION -->
       <div class="info-section">
-        <div class="info-card">
+        <div class="info-card" data-aos="fade-up">
           <img src="my-project-1/assets/images/hydro.png" alt="Hydro">
           <div class="info-text">
             <h3>Hydro Character</h3>
             <p>Hydro is one of the seven Elements. Its associated Archon was Focalors, whose domain was Fontaine.</p>
           </div>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-aos="fade-up" data-aos-delay="100">
           <img src="my-project-1/assets/images/card.webp" alt="name-card">
           <div class="info-text">
             <h3>Neuvillette: Surge</h3>
             <p>Neuvillette: Surge is a Namecard obtained by reaching Friendship Level 10 with Neuvillette.</p>
           </div>
         </div>
-        <div class="info-card">
+        <div class="info-card" data-aos="fade-up" data-aos-delay="200">
           <img src="my-project-1/assets/images/Fontaine.webp" alt="Fontaine">
           <div class="info-text">
             <h3>Fontaine</h3>
@@ -354,7 +356,8 @@ nav a.active {
       </div>
     </section>
 
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js">
+      AOS.init(); // Inisialisasi AOS
       document.addEventListener("DOMContentLoaded", function () {
         // Mengatur event listener untuk tombol close di recent search
         let closeButtons = document.querySelectorAll(".close-btn");
