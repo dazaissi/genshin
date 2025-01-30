@@ -261,7 +261,31 @@ nav a.active {
         width: 180px;
     }
 }
-     
+
+    /* Animation Styles */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s;
+}
+
+.animate-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
   </style>
   
   <body>
@@ -355,33 +379,53 @@ nav a.active {
     </section>
 
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Mengatur event listener untuk tombol close di recent search
-        let closeButtons = document.querySelectorAll(".close-btn");
+     document.addEventListener("DOMContentLoaded", function () {
+    // Mengatur event listener untuk tombol close di recent search
+    let closeButtons = document.querySelectorAll(".close-btn");
 
-        closeButtons.forEach(button => {
-          button.addEventListener("click", function () {
+    closeButtons.forEach(button => {
+        button.addEventListener("click", function () {
             this.parentElement.remove();
-          });
         });
+    });
 
-        // Mengatur event listener untuk navbar links
-        let navLinks = document.querySelectorAll("nav a");
+    // Mengatur event listener untuk navbar links
+    let navLinks = document.querySelectorAll("nav a");
 
-        navLinks.forEach(link => {
-          link.addEventListener("click", function () {
+    navLinks.forEach(link => {
+        link.addEventListener("click", function () {
             // Hapus class "active" dari semua link
             navLinks.forEach(nav => nav.classList.remove("active"));
 
             // Tambahkan class "active" ke link yang diklik
             this.classList.add("active");
-          });
         });
-      });
+    });
 
-      function toggleMenu() {
-        document.querySelector(".nav-menu").classList.toggle("active");
-      }
+    // Scroll animation functionality
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+    function checkScroll() {
+        const scrollPosition = window.scrollY + window.innerHeight;
+
+        elementsToAnimate.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+
+            if (scrollPosition >= elementPosition) {
+                element.classList.add('animate-visible');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+
+    // Initial check in case the page is loaded partially scrolled
+    checkScroll();
+});
+
+function toggleMenu() {
+    document.querySelector(".nav-menu").classList.toggle("active");
+}
     </script>
   </body>
 </html>
