@@ -141,19 +141,22 @@ nav a.active {
 .search-list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px; /* Hapus duplikasi gap */
     border-radius: 32px;
-  gap: 10px;
 }
 
 .search-item {
     display: flex;
-  font-family: 'Poppins', sans-serif;
     justify-content: space-between;
     align-items: center;
     background: #e3e6f3;
     padding: 8px 5px;
     border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: auto; /* Membiarkan lebar mengikuti konten */
+    flex-grow: 1; /* Memungkinkan elemen mengisi ruang yang tersedia */
+    max-width: 500px; /* Membatasi lebar maksimum */
+    box-sizing: border-box;
 }
 
 .search-item.dark {
