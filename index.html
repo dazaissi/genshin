@@ -115,15 +115,18 @@
     /* Artwork Section */
     .artwork {
         background: white;
-        padding: 5px;
+        padding: 8px;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .artwork-container {
-        display: flex;
-        gap: 10px;
-    }
+   .artwork-container {
+    display: flex;
+    gap: 10px;
+    max-width: 80%; /* Mengatur lebar maksimum menjadi 80% dari elemen induk */
+    margin: 0 auto; /* Untuk memastikan kontainer berada di tengah */
+}
+
 
     .artwork-card img {
         width: 100%;
